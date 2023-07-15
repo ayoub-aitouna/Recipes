@@ -7,6 +7,12 @@ public class Category {
     String Cover;
     ArrayList<Recipe> Content;
 
+    public Category(String name, String cover, ArrayList<Recipe> content) {
+        Name = name;
+        Cover = cover;
+        Content = content;
+    }
+
     public Category() {
         Content = new ArrayList<>();
     }

@@ -18,6 +18,10 @@ public class Recipe {
     @ColumnInfo(name = "recipe_content")
     private String recipeContent;
 
+    public Recipe() {
+
+    }
+
     public Recipe(String cover, String title, String recipeContent) {
         this.cover = cover;
         this.title = title;

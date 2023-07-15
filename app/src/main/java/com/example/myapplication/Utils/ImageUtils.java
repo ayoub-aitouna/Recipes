@@ -29,7 +29,7 @@ public class ImageUtils {
 
     private static final String[] imageUrls = {
             "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg",
-            "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+            "",
             "https://content3.jdmagicbox.com/comp/def_content/fast-food/22-fast-food-9-20wsq.jpg"
     };
 
