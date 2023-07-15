@@ -23,4 +23,9 @@ public class RecipeViewModel extends AndroidViewModel {
     public LiveData<List<Recipe>> getRecipeListLiveData() {
         return recipeListLiveData;
     }
+
+    public boolean DoesItExists(Recipe recipe) {
+        return false;
+    }
+
 }

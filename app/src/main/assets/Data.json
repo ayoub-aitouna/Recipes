@@ -1,0 +1,101 @@
+{
+  "categories": [
+    {
+      "Name": "CAT1",
+      "Cover": "",
+      "Content": [
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        }
+      ]
+    },
+    {
+      "Name": "CAT1",
+      "Cover": "",
+      "Content": [
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        }
+      ]
+    },
+    {
+      "Name": "CAT1",
+      "Cover": "",
+      "Content": [
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        },
+        {
+          "cover": "",
+          "title": "",
+          "recipeContent": ""
+        }
+      ]
+    }
+  ],
+  "Featured": [
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    },
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    },
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    }
+  ],
+  "Suggestions": [
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    },
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    },
+    {
+      "cover": "",
+      "title": "",
+      "recipeContent": ""
+    }
+  ]
+}
