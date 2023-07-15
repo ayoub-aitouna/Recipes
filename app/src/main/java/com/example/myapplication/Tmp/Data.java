@@ -7,6 +7,12 @@ public class Data {
     ArrayList<Recipe> Featured;
     ArrayList<Recipe> Suggestions;
 
+    public Data() {
+        this.categories = new ArrayList<>();
+        this.Featured = new ArrayList<>();
+        this.Suggestions = new ArrayList<>();
+    }
+
     public ArrayList<Category> getCategories() {
         return categories;
     }

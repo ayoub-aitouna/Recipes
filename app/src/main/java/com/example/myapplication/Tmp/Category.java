@@ -7,6 +7,10 @@ public class Category {
     String Cover;
     ArrayList<Recipe> Content;
 
+    public Category() {
+        Content = new ArrayList<>();
+    }
+
     public String getName() {
         return Name;
     }

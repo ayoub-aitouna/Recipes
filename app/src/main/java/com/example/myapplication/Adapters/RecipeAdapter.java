@@ -42,7 +42,10 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         holder.textView.setText(item.getTitle());
         Glide.with(context).load(item.getCover()).into(holder.imageView);
     }
-
+    public void setRecipes(List<Recipe> recipes) {
+        this.itemList = recipes;
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return itemList.size();
