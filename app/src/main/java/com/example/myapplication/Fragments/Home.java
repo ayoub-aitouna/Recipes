@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.Activities.FullRecipePage;
 import com.example.myapplication.Activities.RecipeList;
 import com.example.myapplication.Adapters.CategoryAdapter;
 import com.example.myapplication.Adapters.RecipeAdapter;
@@ -46,7 +47,7 @@ public class Home extends Fragment {
             sliderDataArrayList.add(new SliderData(item.getCover()));
         }
         SliderAdapter adapter = new SliderAdapter(getActivity(), sliderDataArrayList, () -> {
-            startActivity(new Intent(getActivity(), Recipe.class));
+            startActivity(new Intent(getActivity(), FullRecipePage.class));
         });
         sliderView.setAutoCycleDirection(SliderView.LAYOUT_DIRECTION_LTR);
         sliderView.setSliderAdapter(adapter);

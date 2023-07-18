@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Objects;
+
 @Entity(tableName = "recipes")
 public class Recipe {
     @PrimaryKey(autoGenerate = true)
@@ -58,5 +60,21 @@ public class Recipe {
 
     public void setRecipeContent(String recipeContent) {
         this.recipeContent = recipeContent;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Recipe otherRecipe = (Recipe) obj;
+        // Compare relevant fields for equality
+        return Objects.equals(this.id, otherRecipe.id)
+                && Objects.equals(this.title, otherRecipe.title)
+                && Objects.equals(this.cover, otherRecipe.cover);
     }
 }

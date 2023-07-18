@@ -1,7 +1,5 @@
 package com.example.myapplication.Fragments;
 
-import static com.example.myapplication.Utils.Utils.SetUpRecipeList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,12 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.Adapters.RecipeAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.Room.RecipeRepository;
-import com.example.myapplication.Tmp.Recipe;
+import com.example.myapplication.Activities.FullRecipePage;
 import com.example.myapplication.Utils.RecipeViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Fav extends Fragment {
     private RecyclerView recyclerView;
@@ -33,7 +29,7 @@ public class Fav extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fav, container, false);
         recyclerView = view.findViewById(R.id.recycler);
         adapter = new RecipeAdapter(new ArrayList<>(), getActivity(), () -> {
-            startActivity(new Intent(getActivity(), Recipe.class));
+            startActivity(new Intent(getActivity(), FullRecipePage.class));
         });
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

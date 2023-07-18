@@ -5,55 +5,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="4dp"
-    tools:context=".Activities.Recipe">
+    android:paddingTop="10dp"
+    tools:context=".Activities.FullRecipePage">
 
-    <RelativeLayout
+    <Toolbar
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="?actionBarSize"
+        android:background="#121212">
 
-        <ImageView
-            android:id="@+id/img"
+        <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg" />
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="center"
+            android:text="NAME OF RECIPE"
+            android:textColor="#fff"
+            android:textSize="21dp"
+            android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/circle"
-            android:backgroundTint="#DD0A52"
-            android:padding="10dp"
-            android:src="@drawable/baseline_favorite_border_24"
-            app:tint="@color/white" />
-    </RelativeLayout>
+    </Toolbar>
 
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:gravity="center"
-        android:text="NAME OF RECIPE"
-        android:textColor="#121212"
-        android:textSize="21dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/conte"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="top|start"
-        android:lineHeight="23dp"
-        android:paddingHorizontal="6dp"
-        android:text="@string/lorem"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="normal" />
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="280dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg" />
+
+            <ImageView
+                android:id="@+id/fav"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/circle"
+                android:backgroundTint="#DD0A52"
+                android:padding="10dp"
+                android:src="@drawable/baseline_favorite_border_24"
+                android:tag="0"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/conte"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|start"
+            android:lineHeight="23dp"
+            android:paddingHorizontal="6dp"
+            android:text="@string/lorem"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+    </LinearLayout>
 
 
 </LinearLayout>

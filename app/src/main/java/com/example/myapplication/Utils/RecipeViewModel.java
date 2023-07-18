@@ -13,19 +13,27 @@ import java.util.List;
 public class RecipeViewModel extends AndroidViewModel {
     private RecipeRepository recipeRepository;
     private LiveData<List<Recipe>> recipeListLiveData;
+    private LiveData<Integer> contained;
 
     public RecipeViewModel(Application application) {
         super(application);
         recipeRepository = new RecipeRepository(application);
         recipeListLiveData = recipeRepository.getAllRecipes();
+//        contained = recipeRepository.DoesItExists()
+    }
+
+    public RecipeViewModel(Application application, Recipe recipe) {
+        super(application);
+        recipeRepository = new RecipeRepository(application);
+        contained = recipeRepository.DoesItExists(recipe);
     }
 
     public LiveData<List<Recipe>> getRecipeListLiveData() {
         return recipeListLiveData;
     }
 
-    public boolean DoesItExists(Recipe recipe) {
-        return false;
+    public LiveData<Integer> Included() {
+        return contained;
     }
 
 }

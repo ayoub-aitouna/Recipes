@@ -18,7 +18,7 @@
             android:name=".Activities.RecipeList"
             android:exported="false" />
         <activity
-            android:name=".Activities.Recipe"
+            android:name=".Activities.FullRecipePage"
             android:exported="false" />
         <activity
             android:name=".Activities.SeconPage"

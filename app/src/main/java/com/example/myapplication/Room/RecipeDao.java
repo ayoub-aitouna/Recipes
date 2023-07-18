@@ -19,12 +19,12 @@ public interface RecipeDao {
     @Update
     void update(Recipe recipe);
 
-    @Delete
-    void delete(Recipe recipe);
+    @Query("delete FROM recipes where  title = :recipeName AND recipe_content = :Content")
+    void delete(String recipeName, String Content);
 
     @Query("SELECT * FROM recipes")
     LiveData<List<Recipe>> getAllRecipes();
 
     @Query("SELECT COUNT(*) FROM recipes WHERE title = :recipeName AND recipe_content = :Content")
-    int CountRecipesByNameAndContent(String recipeName, String Content);
+    LiveData<Integer> CountRecipesByNameAndContent(String recipeName, String Content);
 }
