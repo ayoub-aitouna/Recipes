@@ -1,4 +1,45 @@
 {
+  "Ads": {
+    "settings": {
+      "Comment": "suspended only set to ture if app is suspended",
+      "suspended": false,
+      "UpdatePackageName": "com.example.app",
+      "img": "IMAGE_URL_FOR_NEW_APP",
+      "title": "TITLE_OF_NEW_APP",
+      "message": "SMALL_DESCRIPTION_FOR_NEW_APP",
+      "Available_ADS_to_choose_from": [
+        "Admob",
+        "unityAd",
+        "facebook",
+        "yandex"
+      ],
+      "adsType": "Admob",
+      "nativeType": "Admob"
+    },
+    "ads_info": {
+      "admob": {
+        "Banner": "ca-app-pub-3940256099942544/6300978111",
+        "Inter": "ca-app-pub-3940256099942544/1033173712",
+        "Native": "ca-app-pub-3940256099942544/2247696110",
+        "OpenAd": "ca-app-pub-3940256099942544/3419835294"
+      },
+      "facebook": {
+        "Banner": "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID",
+        "Inter": "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID",
+        "Native": "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID"
+      },
+      "yandex": {
+        "Banner": "R-M-1698866-1",
+        "Inter": "R-M-1698866-2",
+        "Native": "R-M-1698866-3"
+      },
+      "Unity": {
+        "id": "3356798",
+        "Banner": "Banner_Android",
+        "Inter": "Interstitial_Android"
+      }
+    }
+  },
   "categories": [
     {
       "Name": "CAT1",
