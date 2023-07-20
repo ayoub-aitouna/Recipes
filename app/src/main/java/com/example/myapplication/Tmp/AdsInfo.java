@@ -1,4 +1,4 @@
-package com.example.myapplication.models;
+package com.example.myapplication.Tmp;
 
 public class AdsInfo {
     Adtype admob, Unity, facebook, yandex ;

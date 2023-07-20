@@ -18,10 +18,12 @@ import com.example.myapplication.Activities.RecipeList;
 import com.example.myapplication.Adapters.CategoryAdapter;
 import com.example.myapplication.Adapters.RecipeAdapter;
 import com.example.myapplication.Adapters.SliderAdapter;
+import com.example.myapplication.Monetization.Distributor;
 import com.example.myapplication.R;
 import com.example.myapplication.Tmp.Recipe;
 import com.example.myapplication.Tmp.SliderData;
 import com.example.myapplication.Utils.State;
+import com.example.myapplication.interfaces.InterCallback;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -33,6 +35,7 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Distributor.ShowBanner(view.findViewById(R.id.banner));
         recyclerView = view.findViewById(R.id.categories);
         sliderView = view.findViewById(R.id.slider);
         SetUpFeatured();
@@ -47,7 +50,7 @@ public class Home extends Fragment {
             sliderDataArrayList.add(new SliderData(item.getCover()));
         }
         SliderAdapter adapter = new SliderAdapter(getActivity(), sliderDataArrayList, () -> {
-            startActivity(new Intent(getActivity(), FullRecipePage.class));
+            Distributor.ShowInter(() -> startActivity(new Intent(getActivity(), FullRecipePage.class)));
         });
         sliderView.setAutoCycleDirection(SliderView.LAYOUT_DIRECTION_LTR);
         sliderView.setSliderAdapter(adapter);
@@ -58,8 +61,10 @@ public class Home extends Fragment {
 
     void SetUpCategories() {
         CategoryAdapter adapter = new CategoryAdapter(State.m_data.getCategories(), getActivity(), id -> {
-            State.SelectedCategory = State.m_data.getCategories().get(id);
-            startActivity(new Intent(getActivity(), RecipeList.class));
+            Distributor.ShowInter(() -> {
+                State.SelectedCategory = State.m_data.getCategories().get(id);
+                startActivity(new Intent(getActivity(), RecipeList.class));
+            });
         });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);

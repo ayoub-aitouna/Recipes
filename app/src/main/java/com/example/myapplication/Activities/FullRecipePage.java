@@ -14,10 +14,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.MVVM.RecipeViewModelFactory;
+import com.example.myapplication.Monetization.Distributor;
 import com.example.myapplication.R;
 import com.example.myapplication.Room.RecipeRepository;
 import com.example.myapplication.Utils.RecipeViewModel;
 import com.example.myapplication.Utils.State;
+import com.example.myapplication.interfaces.InterCallback;
 
 public class FullRecipePage extends AppCompatActivity {
     ImageView favoriteButton;
@@ -30,6 +32,7 @@ public class FullRecipePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_recipe);
+        Distributor.ShowBanner(findViewById(R.id.banner));
         factory = new RecipeViewModelFactory(getApplication(), State.SelectedRecipe);
         favoriteButton = findViewById(R.id.fav);
         recipeViewModel = new ViewModelProvider(this, factory).get(RecipeViewModel.class);
@@ -41,9 +44,12 @@ public class FullRecipePage extends AppCompatActivity {
             toggle_btn();
         });
         favoriteButton.setOnClickListener(v -> {
-            if (favoriteButton.getTag() != "0") recipeRepository.insertRecipe(State.SelectedRecipe);
-            else recipeRepository.deleteRecipe(State.SelectedRecipe);
-            LoadAnimation();
+            Distributor.ShowInter(() -> {
+                if (favoriteButton.getTag() != "0")
+                    recipeRepository.insertRecipe(State.SelectedRecipe);
+                else recipeRepository.deleteRecipe(State.SelectedRecipe);
+                LoadAnimation();
+            });
         });
         LoadData();
     }

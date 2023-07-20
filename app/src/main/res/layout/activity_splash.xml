@@ -7,27 +7,31 @@
     tools:context=".Activities.Splash">
 
     <ImageView
+        android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/bg"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D8000000"/>
+        android:background="#D8000000" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:textStyle="bold" />
+
     <ProgressBar
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:indeterminateTint="@color/white"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:indeterminateTint="@color/white" />
 </RelativeLayout>

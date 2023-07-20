@@ -35,7 +35,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.Config;
 import com.example.myapplication.interfaces.InterCallback;
-import com.example.myapplication.models.Adtype;
+import com.example.myapplication.Tmp.Adtype;
 
 
 public class Network_Admob {

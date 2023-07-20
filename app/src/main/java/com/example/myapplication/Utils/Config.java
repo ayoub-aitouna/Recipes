@@ -1,7 +1,5 @@
 package com.example.myapplication.Utils;
 
-import com.example.myapplication.models.AdsData;
-
 public class Config {
 
     public static final String Admob = "Admob";

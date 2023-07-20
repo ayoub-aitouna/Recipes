@@ -1,4 +1,4 @@
-package com.example.myapplication.models;
+package com.example.myapplication.Tmp;
 
 public class Adtype {
     String Banner, Inter, Native, Reward, id, OpenAd;

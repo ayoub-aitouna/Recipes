@@ -2,6 +2,7 @@ package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -10,23 +11,22 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.myapplication.Adapters.SliderAdapter;
+import com.example.myapplication.Monetization.Distributor;
 import com.example.myapplication.R;
 import com.example.myapplication.Tmp.SliderData;
 import com.example.myapplication.Utils.ImageUtils;
+import com.example.myapplication.Utils.State;
+import com.example.myapplication.interfaces.InterCallback;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 
 public class SeconPage extends AppCompatActivity {
     // Urls of our images.
-    private static final String[] imageUrls = {
-            "https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141353.jpg",
-            "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
-            "https://content3.jdmagicbox.com/comp/def_content/fast-food/22-fast-food-9-20wsq.jpg"
-    };
+
     private CountDownTimer countDownTimer;
-Button next;
-    private final long COUNTDOWN_DURATION = 5000;
+    Button next;
+    private final long COUNTDOWN_DURATION = State.m_data.getConfig().getWaiting_duration_sec() * 1000L;
     private final long COUNTDOWN_INTERVAL = 1000;
 
     @Override
@@ -35,11 +35,11 @@ Button next;
         setContentView(R.layout.activity_secon_page);
         next = findViewById(R.id.next);
         next.setEnabled(false);
+        Distributor.ShowBanner(findViewById(R.id.banner));
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
         SliderView sliderView = findViewById(R.id.slider);
-        sliderDataArrayList.add(new SliderData(imageUrls[0]));
-        sliderDataArrayList.add(new SliderData(imageUrls[1]));
-        sliderDataArrayList.add(new SliderData(imageUrls[2]));
+        for (String url : State.m_data.getConfig().getLatest_recipes_imgs())
+            sliderDataArrayList.add(new SliderData(url));
         SliderAdapter adapter = new SliderAdapter(this, sliderDataArrayList);
         sliderView.setAutoCycleDirection(SliderView.LAYOUT_DIRECTION_LTR);
         sliderView.setSliderAdapter(adapter);
@@ -49,8 +49,10 @@ Button next;
         sliderView.startAutoCycle();
         startCountdown();
         next.setOnClickListener(view -> {
-            startActivity(new Intent(SeconPage.this, MainActivity.class));
-            finish();
+            Distributor.ShowInter(() -> {
+                startActivity(new Intent(SeconPage.this, MainActivity.class));
+                finish();
+            });
         });
     }
 
@@ -59,12 +61,13 @@ Button next;
         super.onPause();
     }
 
+    @SuppressLint("SetTextI18n")
     private void startCountdown() {
         countDownTimer = new CountDownTimer(COUNTDOWN_DURATION, COUNTDOWN_INTERVAL) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long secondsRemaining = (millisUntilFinished / 1000) + 1;
-                next.setText(secondsRemaining + "S Remaining." );
+                next.setText(secondsRemaining + "S Remaining.");
             }
 
             @Override

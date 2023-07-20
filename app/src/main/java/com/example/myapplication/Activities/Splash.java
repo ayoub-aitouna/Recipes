@@ -11,11 +11,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
+import android.widget.ImageView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.example.myapplication.Dialog.Retry;
+import com.example.myapplication.Dialog.UpdateDialog;
 import com.example.myapplication.Monetization.Distributor;
 import com.example.myapplication.R;
 import com.example.myapplication.Tmp.Data;
@@ -23,6 +27,7 @@ import com.example.myapplication.Utils.Config;
 import com.example.myapplication.Utils.Global;
 import com.example.myapplication.Utils.State;
 import com.google.gson.Gson;
+import com.onesignal.OneSignal;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,10 +40,11 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(getString(R.string.one_signal_id));
+        LoadData();
 
-        new Handler().postDelayed(() -> {
-
-        }, 3 * 1000);
     }
 
     public String loadJSONFromAsset() {
@@ -83,13 +89,16 @@ public class Splash extends AppCompatActivity {
     private void OpenActivity() {
         if (State.m_data.getAds().getSettings().isSuspended()) ShowDialog();
         else {
-            startActivity(new Intent(Splash.this, SeconPage.class));
-            finish();
+            Glide.with(this).load(State.m_data.getConfig().getSplash()).into((ImageView) findViewById(R.id.bg));
+            new Handler().postDelayed(() -> {
+                startActivity(new Intent(Splash.this, SeconPage.class));
+                finish();
+            }, 6 * 1000);
         }
     }
 
     private void Show_Error_Dialog() {
-        com.example.myapplication.Dialog.Retry retry = new Retry(this, this::LoadData);
+        Retry retry = new Retry(this, this::LoadData);
         retry.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         retry.getWindow().setGravity(Gravity.CENTER);
         retry.setCancelable(false);

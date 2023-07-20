@@ -1,16 +1,16 @@
 package com.example.myapplication.Tmp;
 
-import com.example.myapplication.models.AdsData;
-
 import java.util.ArrayList;
 
 public class Data {
+    AppConfig Config;
     AdsData Ads;
     ArrayList<Category> categories;
     ArrayList<Recipe> Featured;
     ArrayList<Recipe> Suggestions;
 
-    public Data(AdsData ads, ArrayList<Category> categories, ArrayList<Recipe> featured, ArrayList<Recipe> suggestions) {
+    public Data(AppConfig config, AdsData ads, ArrayList<Category> categories, ArrayList<Recipe> featured, ArrayList<Recipe> suggestions) {
+        Config = config;
         Ads = ads;
         this.categories = categories;
         Featured = featured;
@@ -37,5 +37,9 @@ public class Data {
 
     public AdsData getAds() {
         return Ads;
+    }
+
+    public AppConfig getConfig() {
+        return Config;
     }
 }

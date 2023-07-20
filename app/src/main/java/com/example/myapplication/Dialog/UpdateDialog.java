@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 
 import com.example.myapplication.R;
 import com.example.myapplication.Utils.Config;
+import com.example.myapplication.Utils.State;
 import com.squareup.picasso.Picasso;
 
 public class UpdateDialog extends Dialog {

@@ -62,6 +62,7 @@
             android:id="@+id/conte"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="top|start"
             android:lineHeight="23dp"
             android:paddingHorizontal="6dp"
@@ -69,6 +70,13 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="normal" />
+
+        <RelativeLayout
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/black" />
     </LinearLayout>
 
 
