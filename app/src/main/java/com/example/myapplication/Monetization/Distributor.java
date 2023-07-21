@@ -1,5 +1,7 @@
 package com.example.myapplication.Monetization;
 
+import static com.example.myapplication.Utils.State.Inter_Count;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.ViewGroup;
@@ -81,6 +83,12 @@ public class Distributor {
     }
 
     static public void ShowInter(InterCallback callback) {
+        if (Inter_Count != State.m_data.getAds().getSettings().getInter_show_count()) {
+            Inter_Count++;
+            response(callback);
+            return;
+        }
+        Inter_Count = 0;
         switch (State.m_data.getAds().getSettings().getAdsType()) {
             case Config.AppPromote:
                 app_promote.Inter(() -> response(callback));

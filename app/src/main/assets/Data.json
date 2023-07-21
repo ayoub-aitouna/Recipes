@@ -23,7 +23,8 @@
         "yandex"
       ],
       "adsType": "Admob",
-      "nativeType": "Admob"
+      "nativeType": "Admob",
+      "inter_show_count": 2
     },
     "ads_info": {
       "admob": {

@@ -4,7 +4,7 @@ package com.example.myapplication.Tmp;
 public class settings {
     String UpdatePackageName, img, title, message, adsType, nativeType;
     boolean suspended;
-
+    int inter_show_count;
 
     public String getUpdatePackageName() {
         return UpdatePackageName;
@@ -42,5 +42,7 @@ public class settings {
         return suspended;
     }
 
-
+    public int getInter_show_count() {
+        return inter_show_count;
+    }
 }

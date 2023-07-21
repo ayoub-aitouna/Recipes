@@ -14,7 +14,6 @@ public class Global {
      * Json File URL
      */
     public static String URL = "https://www.dropbox.com/s/xjt3tbgozbg0b8t/ com.example.myapplication.json?dl=1";
-    public static boolean active = false;
 
 
 }

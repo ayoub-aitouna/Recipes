@@ -6,17 +6,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.example.myapplication.Adapters.SliderAdapter;
 import com.example.myapplication.Monetization.Distributor;
 import com.example.myapplication.R;
 import com.example.myapplication.Tmp.SliderData;
-import com.example.myapplication.Utils.ImageUtils;
 import com.example.myapplication.Utils.State;
-import com.example.myapplication.interfaces.InterCallback;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;

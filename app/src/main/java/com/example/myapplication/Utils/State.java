@@ -8,4 +8,5 @@ public class State {
     static public Data m_data;
     static public Category SelectedCategory;
     static public Recipe SelectedRecipe;
+    static public int Inter_Count = 0;
 }
