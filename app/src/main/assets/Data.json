@@ -22,8 +22,8 @@
         "facebook",
         "yandex"
       ],
-      "adsType": "Admob",
-      "nativeType": "Admob",
+     "adsType": "AppPromote",
+      "nativeType": "AppPromote",
       "inter_show_count": 2
     },
     "ads_info": {
